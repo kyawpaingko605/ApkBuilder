@@ -1,5 +1,12 @@
 apply plugin: 'com.android.application'
 
+// ၅ နှစ်ဟောင်းနေသော ပရောဂျက်များအတွက် JitPack လမ်းကြောင်းကို ဤနေရာတွင် တိုက်ရိုက်ဖွင့်ပေးခြင်း
+repositories {
+    google()
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
 android {
 	compileSdkVersion 30
 	
@@ -15,7 +22,7 @@ android {
 		targetCompatibility JavaVersion.VERSION_1_8
 	}
 	
-	// Error အသေးစိတ်ကို မြင်ရအောင် ဒီနေရာမှာ ထည့်သွင်းပေးထားပါတယ်
+	// Error အသေးစိတ်ကို မြင်ရအောင် ထည့်သွင်းထားခြင်း
 	tasks.withType(JavaCompile) {
 		options.compilerArgs << "-Xdiags:verbose"
 	}
@@ -48,7 +55,7 @@ dependencies {
 	implementation 'com.android.tools:r8:2.2.64'
 	implementation 'org.eclipse.jdt.core.compiler:ecj:4.6.1'
 
-	// ပျောက်ဆုံးနေသော Library များကို ဖြည့်စွက်ထားခြင်း
+	// ပျောက်ဆုံးနေသော Library များ
 	implementation 'com.github.Rosemoe.CodeEditor:editor:0.12.0'
 	implementation 'org.eclipse.lsp4j:org.eclipse.lsp4j:0.12.0'
 	implementation 'org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.12.0'
