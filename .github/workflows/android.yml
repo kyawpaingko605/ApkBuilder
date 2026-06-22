@@ -23,11 +23,10 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
-    # တိုက်ရိုက် APK ထွက်စေမည့် အမိန့်စာသားသို့ ပြောင်းလဲထားခြင်း
+    # :app: သို့ လမ်းကြောင်းတိကျစွာ ပြောင်းလဲပေးလိုက်ခြင်း
     - name: Build Debug APK
-      run: ./gradlew assembleDebug
+      run: ./gradlew :app:assembleDebug
 
-    # ထွက်လာသည့် APK ကို သိမ်းဆည်းရန် လမ်းကြောင်းအမှန် ပြင်ဆင်ထားခြင်း
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
