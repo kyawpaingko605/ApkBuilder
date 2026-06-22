@@ -1,1 +1,18 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' } // JitPack လမ်းကြောင်း ဖွင့်ပေးလိုက်ခြင်း
+    }
+}
+
+rootProject.name = "ApkBuilder"
 include ':app'
